@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)file:///F:/Preciso%20tirar.html -->
+<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+        <title>Preciso Tirar</title>
+        <meta name="author" content="Ivomar A. Santos">
+        <script>
+            window.addEventListener('load',function(){
+                alert("Olá! Insira sua notas da N1 e veja quanto falta pra você passar :)");
+            });
+            function primeiraMedia(){
+                var n11 = document.getElementById('n1-1').value;
+                n11 = parseFloat(n11);
+                var n12 = document.getElementById('n1-2').value;
+                n12 = parseFloat(n12);
+                var result = (n11 + n12) / 2;
+				result = result.toFixed(2);
+                document.getElementById('n1').value = result;
+            }
+            function segundaMedia(){
+                var n21 = document.getElementById('n2-1').value;
+                n21 = parseFloat(n21);
+                var n22 = document.getElementById('n2-2').value;
+                n22 = parseFloat(n22);
+                var result = (n21 + n22) / 2;
+				result = result.toFixed(2);
+                document.getElementById('n2').value = result;
+            }
+            function prevNdois(){
+                var n1 = document.getElementById('n1').value;
+                var result = ((-n1 * 2) + 35) / 3;
+				result = result.toFixed(2);
+				if(result>10)
+					alert('Você Está Reprovado');
+				else
+                    alert('Você deve conquistar média '+result+' na N2');
+            }
+            function calcular(){
+                var n1 = document.getElementById('n1').value;
+                var n2 = document.getElementById('n2').value;
+                var result = ((n1 * 2) + (n2 * 3)) / 5;
+				result = result.toFixed(2);
+				if(result>=7){
+					alert('Você Obteve Média '+result+' E Está Aprovado');
+				}else if(result<3){
+					alert('Você Obteve Média '+result+' E Está Reprovado');
+				}else{
+					var final = -result + 10;
+					final = final.toFixed(2);
+					alert('Você Obteve Média '+result+'\nE Precisa Obter '+final+' Pontos na Recuperação Final');
+				}
+            }
+            function prevAV4(){
+                var n1 = document.getElementById('n1').value;
+                var n21 = document.getElementById('n2-1').value;
+                var result = ((-n1 * 2) + 35) / 3;
+				var prevAv4 = (result * 2) - n21;
+				prevAv4 = prevAv4.toFixed(2);
+				document.getElementById('av4').value = prevAv4;
+            }
+        </script>
+    </head>
+    <body>
+        <fieldset>
+            <legend>N1</legend>
+            <p>Primeira Avaliação</p>
+            <input type="number" id="n1-1" max="10" min="0" step="0.1" onclick="primeiraMedia()" onkeyup="primeiraMedia()" value="0">
+            <p>Segunda Avaliação</p>
+            <input type="number" id="n1-2" max="10" min="0" step="0.1" onclick="primeiraMedia()" onkeyup="primeiraMedia()" value="0">
+            <p>MÉDIA DA N1</p>
+            <output id="n1">9.00</output>
+        </fieldset>
+        <button onclick="prevNdois()">Média Recomendada Para N2</button>
+	<fieldset>
+            <legend>N2</legend>
+            <p>Primeira Avaliação</p>
+            <input type="number" id="n2-1" max="10" min="0" step="0.1" onclick="segundaMedia()" onkeyup="segundaMedia(); prevAV4()" value="0">
+            <p>Recomendado para AV4</p>
+            <output id="av4">1.33</output>
+            <p>Segunda Avaliação</p>
+            <input type="number" id="n2-2" max="10" min="0" step="0.1" onclick="segundaMedia()" onkeyup="segundaMedia()" value="0">
+            <p>MÉDIA DA N2</p>
+            <output id="n2">5.00</output>
+        </fieldset>
+        <button onclick="calcular()">Calcular Média Final</button>
+    
+
+</body></html>

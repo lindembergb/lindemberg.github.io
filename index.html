@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Lindemberg Barbosa</title>
+  <meta name="description" content="Lindemberg Barbosa">
+  <meta name="keywords" content="Lindemberg Barbosa">
+  <meta name="theme-color" content="&#8234;#0E83CD">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+  <link rel="shortcut icon" href="favicon.ico">
+  <style type="text/css">
+  @font-face{
+    font-family:Lato;
+    font-style:normal;
+    font-weight:300;
+    src:url(./assets/Lato-Light.ttf)format('truetype')
+  }
+  @font-face{
+    font-family:Lato;
+    font-style:normal;
+    font-weight:700;
+    src:url(./assets/Lato-Bold.ttf)format('truetype')
+  }
+  @font-face{
+    font-family:fontello;
+    font-style:normal;
+    font-weight:300;
+    src:url(./assets/fontello.woff)format('truetype')
+  }
+  .sprite{
+    background:url(./assets/sprite.png)no-repeat 0 0;
+    background-size:180px 140px
+  }
+  @media only screen and (-webkit-min-device-pixel-ratio:2),only screen and (min-device-pixel-ratio:2){
+    .sprite{
+      background:url(./assets/sprite@2x.png)no-repeat 0 0;
+      background-size:180px 140px
+    }
+  }
+  .profile{
+    width:60px;
+    height:60px;
+    background-position:0 0
+  }
+  .map{
+    width:160px;
+    height:80px;
+    background-position:0 -60px
+  }
+  .twitter{
+    width:30px;
+    height:30px;
+    background-position:-60px 0
+  }
+  .github{
+    width:30px;
+    height:30px;
+    background-position:-90px 0
+  }
+  .linkedin{
+    width:30px;
+    height:30px;
+    background-position:-120px 0
+  }
+  .facebook{
+    width:30px;
+    height:30px;
+    background-position:-150px 0
+  }
+  .spotify{
+    width:30px;
+    height:30px;
+    background-position:-120px -30px
+  }
+  .email{
+    width:30px;
+    height:30px;
+    background-position:-90px -30px
+  }
+  *{
+    box-sizing:border-box;
+    margin:0;
+    padding:0
+  }
+  html{
+    -webkit-text-size-adjust:100%
+  }
+  body,html{
+    height:100%
+  }
+  body{
+    min-width:320px;
+    display:-webkit-flex;
+    display:flex;
+    -webkit-align-items:center;
+    align-items:center;
+    font-family:Lato,sans-serif;
+    font-style:normal;
+    font-weight:300;
+    font-size:11pt;
+    background:#171F26;
+    color:#FFF;
+    border-left:5px solid #0E83CD
+  }
+  .wrapper{
+    width:100%;
+    max-width:490px;
+    margin:6.25%
+  }
+  .top:after,.top:before{
+    content:" ";
+    display:table
+  }
+  .top:after{
+    clear:both
+  }
+  .profile{
+    float:left
+  }
+  .map{
+    float:right;
+    position:relative
+  }
+  #location{
+    width:6px;
+    height:6px;
+    position:absolute;
+    left:54px;
+    top:51px;
+    border-radius:3px;
+    background-color:#FFF
+  }
+  .headline{
+    font-weight:700;
+    font-size:1.8em;
+    line-height:1.1em;
+    margin-bottom: 10px
+  }
+  .subheadline{
+    font-weight:300;
+    font-size:1.12em;
+    /*line-height:1.4em;*/
+    margin:6px 0 10px 0;
+    /*padding-left:10px;*/
+    color:#BABCBE;
+    /*border-left:5px solid #0E83CD*/
+  }
+  .links{
+    margin:0 0 45px 0
+  }
+  .links a{
+    margin-top: 10px;
+    margin-right:4px;
+    display:inline-block;
+    -webkit-tap-highlight-color:transparent
+  }
+  .footnote{
+    font-size:.95em;
+    color:#BABCBE
+  }
+  .bodyicon{
+    font-size:.95em;
+    color:#FFF;
+    font-family:fontello;
+  }
+  a{
+    text-decoration:none;
+    color:#000000;
+  }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <div class="top">
+        <div class="sprite profile">
+        </div>
+        <div class="sprite map">
+          <div id="location">
+          </div>
+        </div>
+      </div>
+      <h1 class="headline">Lindemberg Barbosa</h1>
+      <a href="http://www.ifce.edu.br/aracati" onclick="ga(&quot;send&quot;,&quot;event&quot;,&quot;outbound&quot;,&quot;click&quot;,&quot;ifce&quot;)" target="_blank">
+        <h2 class="subheadline"><span class="bodyicon">&#59402;&nbsp;</span>Instituto Federal de Educa&ccedil;&atilde;o, Ci&ecirc;ncia e Tecnologia do Cear&aacute; (IFCE)</h2>
+      </a>
+      <a href="https://www.google.com.br/maps/@-4.5676478,-37.7737193,3a,75y,106.91h,89.06t/data=!3m6!1e1!3m4!1saNpVnMl3ySWHkVorY-f7UA!2e0!7i13312!8i6656" onclick="ga(&quot;send&quot;,&quot;event&quot;,&quot;outbound&quot;,&quot;click&quot;,&quot;maps&quot;)" target="_blank">
+      <h2 class="subheadline"><span class="bodyicon">&nbsp;&#59392;&nbsp;</span>Aracati, BR</h2>
+      </a>
+
+    </header>
+    <div class="links">
+      <a href="https://facebook.com/lindembergbarbosa" onclick="ga(&quot;send&quot;,&quot;event&quot;,&quot;outbound&quot;,&quot;click&quot;,&quot;facebook&quot;)" target="_blank" class="sprite facebook"></a>
+      <a href="https://twitter.com/lindembergb" onclick="ga(&quot;send&quot;,&quot;event&quot;,&quot;outbound&quot;,&quot;click&quot;,&quot;twitter&quot;)" target="_blank" class="sprite twitter"></a>
+      <a href="https://open.spotify.com/user/lindembergb5" onclick="ga(&quot;send&quot;,&quot;event&quot;,&quot;outbound&quot;,&quot;click&quot;,&quot;twitter&quot;)" target="_blank" class="sprite spotify"></a>
+      <a href="https://github.com/lindembergb" onclick="ga(&quot;send&quot;,&quot;event&quot;,&quot;outbound&quot;,&quot;click&quot;,&quot;github&quot;)" target="_blank" class="sprite github"></a>
+      <a href="https://linkedin.com/in/lindembergb/" onclick="ga(&quot;send&quot;,&quot;event&quot;,&quot;outbound&quot;,&quot;click&quot;,&quot;linkedin&quot;)" target="_blank" class="sprite linkedin"></a>
+
+    </div>
+    <footer>
+      <p class="footnote">&#169; 2016 Lindemberg Barbosa. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>
