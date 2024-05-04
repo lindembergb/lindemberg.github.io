@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>XML</title>
+  <meta name="description" content="Lindemberg Barbosa">
+  <meta name="keywords" content="Lindemberg Barbosa">
+  <meta name="theme-color" content="&#8234;#0E83CD">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+  <link rel="shortcut icon" href="favicon.ico">
+  <style type="text/css">
+    @font-face {
+      font-family: Lato;
+      font-style: normal;
+      font-weight: 300;
+      src: url(./assets/Lato-Light.ttf)format('truetype')
+    }
+
+    @font-face {
+      font-family: Lato;
+      font-style: normal;
+      font-weight: 700;
+      src: url(./assets/Lato-Bold.ttf)format('truetype')
+    }
+
+    .sprite {
+      background: url(./assets/sprite.png)no-repeat 0 0;
+      background-size: 180px 140px
+    }
+
+    @media only screen and (-webkit-min-device-pixel-ratio:2),
+    only screen and (min-device-pixel-ratio:2) {
+      .sprite {
+        background: url(./assets/sprite@2x.png)no-repeat 0 0;
+        background-size: 180px 140px
+      }
+    }
+
+    .profile {
+      width: 60px;
+      height: 60px;
+      background-position: 0 0
+    }
+
+    .map {
+      width: 160px;
+      height: 80px;
+      background-position: 0 -60px
+    }
+
+    .twitter {
+      width: 30px;
+      height: 30px;
+      background-position: -60px 0
+    }
+
+    .github {
+      width: 30px;
+      height: 30px;
+      background-position: -90px 0
+    }
+
+    .linkedin {
+      width: 30px;
+      height: 30px;
+      background-position: -120px 0
+    }
+
+    .facebook {
+      width: 30px;
+      height: 30px;
+      background-position: -150px 0
+    }
+
+    .spotify {
+      width: 30px;
+      height: 30px;
+      background-position: -120px -30px
+    }
+
+    .email {
+      width: 30px;
+      height: 30px;
+      background-position: -90px -30px
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%
+    }
+
+    body,
+    html {
+      height: 100%
+    }
+
+    body {
+      min-width: 320px;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-align-items: center;
+      align-items: center;
+      font-family: Lato, sans-serif;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 11pt;
+      background: #171F26;
+      color: #FFF;
+      border-left: 5px solid #8d8d8d
+    }
+
+    .wrapper {
+      width: 100%;
+      max-width: 1490px;
+      margin: 6.25%
+    }
+
+    .top:after,
+    .top:before {
+      content: " ";
+      display: table
+    }
+
+    .top:after {
+      clear: both
+    }
+
+    .profile {
+      float: left
+    }
+
+    .map {
+      float: right;
+      position: relative
+    }
+
+    #location {
+      width: 6px;
+      height: 6px;
+      position: absolute;
+      left: 54px;
+      top: 51px;
+      border-radius: 3px;
+      background-color: #FFF
+    }
+
+    .headline {
+      font-weight: 700;
+      font-size: 1.8em;
+      line-height: 1.1em;
+      margin-bottom: 10px
+    }
+
+    .subheadline {
+      font-weight: 300;
+      font-size: 1.12em;
+      /*line-height:1.4em;*/
+      margin: 6px 0 10px 0;
+      /*padding-left:10px;*/
+      color: #BABCBE;
+      /*border-left:5px solid #0E83CD*/
+    }
+
+    .links {
+      margin: 0 0 45px 0
+    }
+
+    .links a {
+      margin-top: 10px;
+      margin-right: 4px;
+      display: inline-block;
+      -webkit-tap-highlight-color: transparent
+    }
+
+    .footnote {
+      font-size: .95em;
+      color: #BABCBE
+    }
+
+    .bodyicon {
+      font-size: .95em;
+      color: #FFF;
+      font-family: fontello;
+    }
+
+    a {
+      text-decoration: none;
+      color: #000000;
+    }
+
+    .textarea {
+      resize: both;
+      height: 822px;
+      width: 1500px;
+      min-height: 316px;
+      background-color: #2f3d49;
+      color: #FFF;
+    }
+
+    .is-code {
+      font-family: Roboto Mono, Consolas, Courier New, monospace;
+      font-size: .9rem;
+      line-height: 1.45;
+      text-shadow: 0.015em 0.015em 0 #666;
+      color: #ebebeb;
+      padding: calc(.75rem - 1px);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div>
+      <h1 class="headline"><a href="../json/index.html"><span style="color: #636363;">JSON </span></a>XML</h1>
+    </div>
+    <div>
+      <textarea class="textarea is-code" id="data" placeholder="<xml>❤️<xml/>" rows="5"
+        onkeyup="myFunction()"></textarea>
+    </div>
+    <div>
+      <p class="footnote">&#169; 2024 Lindemberg Barbosa. All rights reserved.</p>
+    </div>
+  </div>
+</body>
+<script>
+  function myFunction() {
+    let textarea = document.getElementById("data");
+    var xmlDoc = new DOMParser().parseFromString(textarea.value, 'application/xml');
+    var xsltDoc = new DOMParser().parseFromString([
+        // describes how we want to modify the XML - indent everything
+        '<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform">',
+        '  <xsl:strip-space elements="*"/>',
+        '  <xsl:template match="para[content-style][not(text())]">', // change to just text() to strip space in text nodes
+        '    <xsl:value-of select="normalize-space(.)"/>',
+        '  </xsl:template>',
+        '  <xsl:template match="node()|@*">',
+        '    <xsl:copy><xsl:apply-templates select="node()|@*"/></xsl:copy>',
+        '  </xsl:template>',
+        '  <xsl:output indent="yes"/>',
+        '</xsl:stylesheet>',
+    ].join('\n'), 'application/xml');
+
+    var xsltProcessor = new XSLTProcessor();    
+    xsltProcessor.importStylesheet(xsltDoc);
+    var resultDoc = xsltProcessor.transformToDocument(xmlDoc);
+    var resultXml = new XMLSerializer().serializeToString(resultDoc);
+    textarea.value = resultXml;
+  }
+</script>
+<script src="json2.js"></script>
+</html>
